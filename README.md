@@ -1,35 +1,57 @@
 # CarSystemManagement
 
 Car Management system is system API base with JWT token and notification using SMFT Provider using MailTrap. In this system, there are 3 types of users (Admin, Car Owner, and Mechanics)
-1.	Clone github Project fahrulrizall/CarSystemManagement (github.com)
+
+1.	Clone github Project [Here](https://github.com/fahrulrizall/CarSystemManagement "Github")
 2.	Open the code with your favorite code editor
 3.	Change database connection in ‘appsettings.json’
 4.	Run migration with ‘update-database’
 5.	Run the project with CLI ‘dotnet run’
 6.	There is 4 controller 
-Account Controller 
-Post    Local:{port}/api/account/authenticate to login and get token
+      <br />
+      Account Controller 
+      <br />
+      -Post    Local:{port}/api/account/authenticate to login and get token
+      <br />
+      
+      Owner Controller
+      <br />
+      -Get    	Localhost:{port}/api/owner
+      <br />
+      -Get    	Localhost:{port}/api/owner/{id}
+      <br />
+      -Create   Localhost:{port}/api/owner/[model]
+      <br />
+      -Put    	Localhost:{port}/api/owner/{id}/[model]
+      <br />
+      -Delete	Localhost:{port}/api/owner/{id}
+      <br />
 
-Owner Controller 
-Get    	Localhost:{port}/api/owner
-Get    	Localhost:{port}/api/owner/{id}
-Create   Localhost:{port}/api/owner/[model]
-Put    	Localhost:{port}/api/owner/{id}/[model]
-Delete	Localhost:{port}/api/owner/{id}
+      Mechanic Controller 
+      <br />
+      -Get    	Localhost:{port}/api/mechanics
+      <br />
+      -Get    	Localhost:{port}/api/mechanics/{id}
+      <br />
+      -Create   Localhost:{port}/api/mechanics/[model]
+      <br />
+      -Put    	Localhost:{port}/api/mechanics/{id}/[model]
+      <br />
+      -Delete	Localhost:{port}/api/mechanics/{id}
+      <br />
 
-Mechanic Controller 
-Get    	Localhost:{port}/api/mechanics
-Get    	Localhost:{port}/api/mechanics/{id}
-Create   Localhost:{port}/api/mechanics/[model]
-Put    	Localhost:{port}/api/mechanics/{id}/[model]
-Delete	Localhost:{port}/api/mechanics/{id}
-
-Services Controller 
-Get    	Localhost:{port}/api/Services
-Get    	Localhost:{port}/api/Services/{id}
-Create   Localhost:{port}/api/Services/[model]
-Put    	Localhost:{port}/api/Services/{id}/[model]
-Delete	Localhost:{port}/api/Services/{id}
+      Services Controller 
+      <br />
+      -Get    	Localhost:{port}/api/Services
+      <br />
+      -Get    	Localhost:{port}/api/Services/{id}
+      <br />
+      -Create   Localhost:{port}/api/Services/[model]
+      <br />
+      -Put    	Localhost:{port}/api/Services/{id}/[model]
+      <br />
+      -Delete	Localhost:{port}/api/Services/{id}
+      <br />
 
 7.	SMTP Notification
 -	Change configuration in ‘appsettings.json’ for SMTPConfig base your account
