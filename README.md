@@ -11,7 +11,7 @@ Car Management system is system API base with JWT token and notification using S
       <br />
       Account Controller 
       <br />
-      -Post    Local:{port}/api/account/authenticate to login and get token
+      -Post    Local:{port}/api/account/authenticate to login and get token (Username : Admin;Password : Admin)
       <br />
       
       Owner Controller
