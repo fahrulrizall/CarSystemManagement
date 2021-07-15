@@ -22,6 +22,38 @@ namespace MVC.Repository
         {
             _db.CarServices.Add(CarServices);
             await _db.SaveChangesAsync();
+
+            var customer = _db.CarServices.Where(a => a.Id == CarServices.Id).Include(a => a.CarOwner).Include(a => a.Mechanics).Single();
+
+            List<UserEmailOptions> userEmailOptions = new List<UserEmailOptions>();
+
+            UserEmailOptions to_owner = new UserEmailOptions
+            {
+                Subject = "Notification - Car System Management",
+                ToEmails = new List<string> { customer.CarOwner.Email },
+                Body = $"Dear {customer.CarOwner.Name}" +
+                $"We Have Update For Your Car " +
+                $"- Service Name = {customer.ServiceName} " +
+                $"- Price = {customer.Price} " +
+                $"- Status = {customer.Status_Proses} " +
+                $"- Mechanic Name = {customer.Mechanics.Name}",
+            };
+
+            UserEmailOptions to_mechanic = new UserEmailOptions
+            {
+                Subject = "Notification - Car System Management",
+                ToEmails = new List<string> { customer.Mechanics.Email },
+                Body = $"Hi {customer.Mechanics.Name}" +
+                $"We Have Update For you Job Desc  " +
+                $"- Service Name = {customer.ServiceName} " +
+                $"- Status = {customer.Status_Proposal} "
+            };
+
+            userEmailOptions.Add(to_owner);
+            userEmailOptions.Add(to_mechanic);
+
+            await emailServices.SendTestEmail(userEmailOptions);
+
             return CarServices;
         }
 
