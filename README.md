@@ -56,4 +56,8 @@ Car Management system is system API base with JWT token and notification using S
 7.	SMTP Notification
 -	Change configuration in ‘appsettings.json’ for SMTPConfig base your account
 -	Notification will send when there are create and update in services controller to owner and mechanics
+<br />
+8. Database Connection
+
+<img src="https://github.com/fahrulrizall/CarSystemManagement/blob/master/MVC/wwwroot/db.JPG" width="150" height="200" />
 
